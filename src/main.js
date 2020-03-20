@@ -16,6 +16,12 @@ Vue.component(SwipeItem.name, SwipeItem);
 //引入mit-ui全局样式
 import 'mint-ui/lib/style.css'
 
+// 导入时间插件
+import moment from 'moment'
+// 定义全局过滤器
+Vue.filter('dateFormat',(dateStr,pattern = 'YYYY-MM-DD HH:mm:ss')=>{
+  return moment(dateStr).format(pattern)
+})
 
 // mui样式
 import './lib/mui/css/mui.min.css'
