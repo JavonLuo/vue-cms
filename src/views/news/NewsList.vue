@@ -19,6 +19,7 @@
 
 <script>
 import {getNewsList} from '../../api/api'
+import { Toast } from "mint-ui";
 export default {
 data(){
 	return{
@@ -28,14 +29,17 @@ data(){
 created(){
 	getNewsList()
 	.then((res)=>{
-		console.log(res)
+		// console.log(res)
 		if(res.status === 200){
 			this.newsList = res.data.message
 		}else{
-			Toast('数据获取失败，请重试...')
+			Toast('数据获取失败...')
 		}
 	})
-	.catch(err=>{throw err})
+	.catch(err=>{
+		Toast('数据获取失败...')
+		throw err
+		})
 }
   }
 
