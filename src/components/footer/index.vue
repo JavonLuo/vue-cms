@@ -32,6 +32,9 @@ export default {
 .mui-bar-tab .mui-tab-item-llb.mui-active {
     color: #007aff;
 }
+.mui-bar .mui-bar-tab{
+  z-index: 88;
+}
 .mui-bar-tab .mui-tab-item-llb {
     display: table-cell;
     overflow: hidden;
